@@ -1,13 +1,11 @@
-# Set up for mongoDB
+# Set up for mongoDB using FastAPI
+# to run this: uvicorn main:app --reload
 
 from fastapi import FastAPI
 from motor.motor_asyncio import AsyncIOMotorClient
 
-
 MONGO_URI = "mongodb://localhost:27017/"
-
 app = FastAPI()
-
 client = AsyncIOMotorClient(MONGO_URI)
 db = client['iupcosc']
 collection = db['iupcosc']
